@@ -197,6 +197,7 @@ function parseInstruction(synonyms, table, val) {
 
 var moveLeft = Object.freeze({move: TM.MoveHead.left});
 var moveRight = Object.freeze({move: TM.MoveHead.right});
+var moveStay = Object.freeze({move: TM.MoveHead.stay});
 
 // case: direction or synonym
 function parseInstructionString(synonyms, val) {
@@ -204,6 +205,8 @@ function parseInstructionString(synonyms, val) {
     return moveLeft;
   } else if (val === 'R') {
     return moveRight;
+  } else if (val === 'N') {
+    return moveStay;
   }
   // note: this order prevents overriding L/R in synonyms, as that would
   // allow inconsistent notation, e.g. 'R' and {R: ..} being different.
@@ -223,15 +226,15 @@ function parseInstructionObject(val) {
     var badKey;
     if (!Object.keys(val).every(function (key) {
       badKey = key;
-      return key === 'L' || key === 'R' || key === 'write';
+      return key === 'L' || key === 'R' || key === 'N' || key === 'write';
     })) {
       throw new TMSpecError('Unrecognized key',
       {problemValue: badKey,
-      info: 'An instruction always has a tape movement <code>L</code> or <code>R</code>, '
+      info: 'An instruction always has a tape movement <code>L</code>, <code>R</code>, or  <code>N</code>'
         + 'and optionally can <code>write</code> a symbol'});
     }
   })();
-  // one L/R key is required, with optional state value
+  // one L/R/N key is required, with optional state value
   if ('L' in val && 'R' in val) {
     throw new TMSpecError('Conflicting tape movements',
     {info: 'Each instruction needs exactly one movement direction, but two were found'});
@@ -242,6 +245,9 @@ function parseInstructionObject(val) {
   } else if ('R' in val) {
     move = TM.MoveHead.right;
     state = val.R;
+  } else if ('N' in val) {
+    move = TM.MoveHead.stay;
+    state = val.S;
   } else {
     throw new TMSpecError('Missing movement direction');
   }
