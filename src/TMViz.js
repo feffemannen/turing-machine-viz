@@ -145,7 +145,6 @@ TMViz.prototype.reset = function () {
   this.machine.state = this.__spec.startState;
   this.machine.tape.domNode.remove();
   this.machine.tape = addTape(this.__parentDiv, this.__spec);
-  this.machine.tape.headRight(); // Move head right to sq 1 ???
 };
 
 Object.defineProperty(TMViz.prototype, 'positionTable', {

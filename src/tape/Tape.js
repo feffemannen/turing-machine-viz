@@ -13,7 +13,7 @@ function Tape(blank, input) {
   // before: cells before the head (in order; left to right).
   // after:  cells after and including the head (in reverse; right to left).
   this.tape = {
-    before: [],
+    before: ['>'], // Put tape end marker to left of input
     after: (input == null || input.length == 0) ? [blank] : input.slice().reverse(),
     toString: function () {
       return this.before.join('') + '🔎' + this.after.slice().reverse().join('');

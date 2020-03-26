@@ -51,7 +51,7 @@ function move(tape, direction) {
   switch (direction) {
     case MoveHead.right: tape.headRight(); break;
     case MoveHead.left:  tape.headLeft();  break;
-    case MoveHead.stay:  break;
+    case MoveHead.stay:  break;  // add STAY
     default: throw new TypeError('not a valid tape movement: ' + String(direction));
   }
 }

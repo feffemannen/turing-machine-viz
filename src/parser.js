@@ -235,7 +235,9 @@ function parseInstructionObject(val) {
     }
   })();
   // one L/R/N key is required, with optional state value
-  if ('L' in val && 'R' in val) {
+  if (('L' in val && 'R' in val) ||
+      ('L' in val && 'N' in val) ||
+      ('R' in val && 'N' in val)) {
     throw new TMSpecError('Conflicting tape movements',
     {info: 'Each instruction needs exactly one movement direction, but two were found'});
   }
