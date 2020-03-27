@@ -28,13 +28,13 @@ text {
 }
 
 .edgelabel {
-  font-size: 10px;
-  fill: #aaa;
+  font-size: 15px;
+  fill: black;
   letter-spacing: 0.2em;
 }
 
 .edgepath {
-  stroke: #ccc;
+  stroke: #444;
   fill: none;
   pointer-events: none;
 }
@@ -44,8 +44,8 @@ text {
 }
 
 #arrowhead, #reversed-arrowhead {
-  stroke: #ccc;
-  fill: #ccc;
+  stroke: #444;
+  fill: #444;
 }
 
 #active-arrowhead, #reversed-active-arrowhead {
