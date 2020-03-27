@@ -67,7 +67,7 @@ Thanks go to the authors of the following runtime dependencies:
 # Changes to original
 
 I've made the following changes to the [original
-version(https://github.com/aepsilon/turing-machine-viz):
+version](https://github.com/aepsilon/turing-machine-viz):
 
 - Allow the `N` operation (no move)
 - Replace the examples with examples from Chapter 12 of [Sets, Logic,
