@@ -59,3 +59,13 @@ Thanks go to the authors of the following runtime dependencies:
 [lodash]: https://github.com/lodash/lodash
 [lodash/fp]: https://github.com/lodash/lodash/wiki/FP-Guide
 [lumen]: https://bootswatch.com/lumen/
+
+# Changes to original
+
+I've made the following changes to the [original
+version(https://github.com/aepsilon/turing-machine-viz):
+
+- Allow the `N` operation (no move)
+- Replace the examples with examples from Chapter 12 of [Sets, Logic,
+  Computation](https://slc.openlogicproject.org/)
+- Write tape end marker `>` to the left of input 

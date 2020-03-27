@@ -9,7 +9,7 @@ function requireExample(name) {
 }
 
 var examplePairs = [
-  'repeat01',
+/*   'repeat01',
   'binaryIncrement',
   'divisibleBy3',
   'copy1s',
@@ -23,7 +23,10 @@ var examplePairs = [
   'lengthMult',
   'binaryAdd',
   'unaryMult',
-  'binaryMult'
+  'binaryMult' */
+  'even',
+  'doubler',
+  'addition'
 ].map(function (id) {
   // parse each string into a document
   var doc = parseDocument(requireExample(id));
@@ -48,5 +51,6 @@ var list = examplePairs.map(function (pair) { return pair[1]; });
 exports.hasID = isExampleID;
 exports.get = get;
 exports.list = list;
-exports.firsttimeDocID = 'binaryIncrement';
+// exports.firsttimeDocID = 'binaryIncrement';
+exports.firsttimeDocID = 'even';
 exports.blankTemplate = requireExample('_template');

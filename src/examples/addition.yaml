@@ -1,0 +1,21 @@
+name: Addition
+source code: |-
+  # Sets, Logic, Computation Example 12.12
+  # The Addition Machine
+  input: 'IIII III'
+  blank: ' '
+  start state: q0
+  table:
+    q0:
+      I    : {write: I, R: q0} 
+      ' '  : {write: I, R: q1}
+    q1:
+      ' '  : {write: ' ', L: q2}
+      I    : {write: I,   R: q1}
+    q2:
+      I    : {write: ' ', N: q1}
+
+positions:
+  q0: {x: 200, y: 250}
+  q1: {x: 400, y: 250}
+  q2: {x: 600, y: 250}

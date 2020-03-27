@@ -1,6 +1,6 @@
 input: '${2}'
 blank: '${3: }'
-start state: ${4:start}
+start state: ${4:q0}
 table:
   ${4}:
     ${5}

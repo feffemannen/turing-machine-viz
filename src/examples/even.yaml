@@ -1,0 +1,18 @@
+name: Even
+source code: |-
+  # Sets, Logic, Computation Example 12.1
+  # The Even Machine
+  input: 'IIII'
+  blank: ' '
+  start state: q0
+  table:
+    q0:
+      I : {write: I, R: q1} 
+    q1:
+      ' '  : {write: ' ', R: q1}
+      I    : {write: I,   R: q0}
+
+  # Change "input" to III; the load and run the machine 
+positions:
+  q0: {x: 347.44, y: 221.94}
+  q1: {x: 537.63, y: 218.27}

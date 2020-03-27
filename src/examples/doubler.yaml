@@ -1,0 +1,33 @@
+name: Doubler
+source code: |+
+  # Sets, Logic, Computation Example 12.4
+  # The Doubler Machine
+  input: 'IIII'
+  blank: ' '
+  start state: q0
+  table:
+    q0:
+      I : {write: ' ', R: q1} 
+    q1:
+      ' '  : {write: ' ', R: q2}
+      I    : {write: I,   R: q1}
+    q2:
+      ' '  : {write: I,   R: q3}
+      I    : {write: I,   R: q2}
+    q3:
+      ' '  : {write: I,   L: q3}
+      I    : {write: I,   L: q4}
+    q4:
+      ' '  : {write: ' ', L: q5}
+      I    : {write: I,   L: q4}
+    q5:
+      ' '  : {write: ' ', R: q0}
+      I    : {write: I,   L: q5}
+
+positions:
+  q0: {x: 250, y: 100}
+  q1: {x: 400, y: 100}
+  q2: {x: 550, y: 100}
+  q3: {x: 550, y: 300}
+  q4: {x: 400, y: 300}
+  q5: {x: 250, y: 300}
