@@ -1,0 +1,53 @@
+name: Addition + Doubler
+source code: |+
+  # Sets, Logic, Computation Example 12.12
+  # Combining the addition and doubler machines
+  # Computes f(n,m) = 2(n+m)
+  input: 'IIII III'
+  blank: ' '
+  start state: q0
+  table:
+  # q0-q2 are the addition machine
+    q0:
+      I    : {write: I, R: q0} 
+      ' '  : {write: I, R: q1}
+    q1:
+      ' '  : {write: ' ', L: q2}
+      I    : {write: I,   R: q1}
+    q2:
+      I    : {write: ' ', L: q3}
+  # instead of halting after having erased the last stroke,
+  # we skip to the beginning so that the head reads the leftmost I
+    q3:
+      I    : {write: I,   L: q3}
+      '>'  : {write: '>', R: q4}
+  # q4-q9 are the doubler TM
+    q4:
+      I :  {write: ' ', R: q5} 
+    q5:
+      ' '  : {write: ' ', R: q6}
+      I    : {write: I,   R: q5}
+    q6:
+      ' '  : {write: I,   R: q7}
+      I    : {write: I,   R: q6}
+    q7:
+      ' '  : {write: I,   L: q7}
+      I    : {write: I,   L: q8}
+    q8:
+      ' '  : {write: ' ', L: q9}
+      I    : {write: I,   L: q8}
+    q9:
+      ' '  : {write: ' ', R: q4}
+      I    : {write: I,   L: q9}
+
+positions:
+  q0: {x: 150, y: 80}
+  q1: {x: 400, y: 80}
+  q2: {x: 650, y: 80}
+  q3: {x: 400, y: 170}
+  q4: {x: 150, y: 260}
+  q5: {x: 400, y: 260}
+  q6: {x: 650, y: 260}
+  q7: {x: 650, y: 450}
+  q8: {x: 400, y: 450}
+  q9: {x: 150, y: 450}

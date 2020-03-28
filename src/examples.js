@@ -26,7 +26,10 @@ var examplePairs = [
   'binaryMult' */
   'even',
   'doubler',
-  'addition'
+  'addition',
+  'additionDoubler',
+  'incrementer',
+  'additionIteration'
 ].map(function (id) {
   // parse each string into a document
   var doc = parseDocument(requireExample(id));

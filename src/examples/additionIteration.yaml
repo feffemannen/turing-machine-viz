@@ -1,0 +1,50 @@
+name: Addition by Iteration
+source code: |+
+  # Sets, Logic, Computation
+  # Addition by iterated incrementing
+  # Computes the function f(n,m) = n+m
+  input: 'III IIII'
+  blank: ' '
+  start state: i0
+  table:
+  # in i0, we're reading the leftmost stroke of the counter,
+  # and erase it, or halt if the counter is empty (reading a blank)
+    i0:
+      I   : {write: ' ', R: i1}
+  # in I1, we skip all the remaining I in the counter
+  # once we hit a blank, move right and start incrementer subroutine
+    i1:
+      I   : {write: I,   R: i1}
+      ' ' : {write: ' ', R: q0}
+  # we enter i2 when we return from the subroutine, reading the 
+  # rightmost I in the counter (if there still is one)
+  # we'll find the leftmost I in the counter
+    i2:
+      ' ' : {write: ' ', L: i3}
+    i3:
+      I   : {write: I,   L: i3}
+      ' ' : {write: ' ', R: i0}
+
+  # q0-q2 are the incrementer machine (with ' ' instead of >
+  # marking the beginning of the input
+  # In q0, find the end of the input and add stroke to the end
+    q0:
+      I    : {write: I,   R: q0}
+      ' '  : {write: I,   L: q1}
+  # In q1, find beginning of input
+    q1:
+      ' '  : {write: ' ', R: q2}
+      I    : {write: I,   L: q1}
+  # q2 is the halt state
+  # instead of halting, we "return" from the subroutine
+    q2:
+      I : {write: I,  L: i2}
+
+positions:
+  i0: {x: 140.25, y: 90.75}
+  i1: {x: 576.59, y: 88.82}
+  i2: {x: 136.56, y: 374.21}
+  i3: {x: 137.4, y: 232.89}
+  q0: {x: 579.26, y: 369.66}
+  q1: {x: 493.75, y: 370.8}
+  q2: {x: 400.23, y: 374.23}

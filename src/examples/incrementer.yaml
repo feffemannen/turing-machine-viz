@@ -1,0 +1,25 @@
+name: Incrementer
+source code: |+
+  # Sets, Logic, Computation
+  # Incrementer Machine
+  # Add one stroke to end, retunr to read leftmost stroke
+  # Computes the function f(n) = n+1
+  input: 'IIII'
+  blank: ' '
+  start state: q0
+  table:
+  # In q0, find the end of the input and add stroke to the end
+    q0:
+      I    : {write: I,   R: q0}
+      ' '  : {write: I,   L: q1}
+  # In q1, find beginning of input
+    q1:
+      '>'  : {write: '>', R: q2}
+      I    : {write: I,   L: q1}
+  # q2 is the halt state
+    q2:
+
+positions:
+  q0: {x: 250, y: 125}
+  q1: {x: 400, y: 125}
+  q2: {x: 550, y: 125}
