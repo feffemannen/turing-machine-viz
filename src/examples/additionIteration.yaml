@@ -2,7 +2,7 @@ name: Addition by Iteration
 source code: |+
   # Sets, Logic, Computation
   # Addition by iterated incrementing
-  # Computes the function f(n,m) = n+m
+  # Computes the function f(n,m) = n + m
   input: 'III IIII'
   blank: ' '
   start state: i0
@@ -41,10 +41,10 @@ source code: |+
       I : {write: I,  L: i2}
 
 positions:
-  i0: {x: 140.25, y: 90.75}
-  i1: {x: 576.59, y: 88.82}
-  i2: {x: 136.56, y: 374.21}
-  i3: {x: 137.4, y: 232.89}
-  q0: {x: 579.26, y: 369.66}
-  q1: {x: 493.75, y: 370.8}
-  q2: {x: 400.23, y: 374.23}
+  i0: {x: 140, y: 90}
+  i1: {x: 580, y: 90}
+  i2: {x: 140, y: 370}
+  i3: {x: 140, y: 230}
+  q0: {x: 580, y: 370}
+  q1: {x: 490, y: 370}
+  q2: {x: 400, y: 370}
