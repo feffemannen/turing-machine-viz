@@ -1,0 +1,25 @@
+name: Mystery
+source code: |+
+  # Turing Machine Exercise 1
+  input: 'BBAB'
+  blank: ' '
+  start state: q0
+  table:
+    q0:
+      A    : {write: A,   R: q1}
+      B    : {write: B,   R: q2}
+    q1:
+      A    : {write: A,   R: q1}
+      B    : {write: B,   R: q1}
+      ' '  : {write: A,   R: q3} 
+    q2:
+      A    : {write: A,   R: q2}
+      B    : {write: B,   R: q2}
+      ' '  : {write: B,   R: q3}
+    q3:
+
+positions:
+  q0: {x: 364.45, y: 293.24}
+  q1: {x: 167.67, y: 184.51}
+  q2: {x: 556.87, y: 198.25}
+  q3: {x: 359.99, y: 90.26}
