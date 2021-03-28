@@ -2,7 +2,7 @@ name: Incrementer
 source code: |+
   # Sets, Logic, Computation
   # Incrementer Machine
-  # Add one stroke to end, retunr to read leftmost stroke
+  # Add one stroke to end, return to read leftmost stroke
   # Computes the function f(n) = n+1
   input: 'IIII'
   blank: ' '

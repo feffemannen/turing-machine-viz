@@ -29,7 +29,8 @@ var examplePairs = [
   'addition',
   'additionDoubler',
   'incrementer',
-  'additionIteration'
+  'additionIteration',
+  'Mystery'
 ].map(function (id) {
   // parse each string into a document
   var doc = parseDocument(requireExample(id));

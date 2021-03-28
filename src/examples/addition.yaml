@@ -13,7 +13,7 @@ source code: |-
       ' '  : {write: ' ', L: q2}
       I    : {write: I,   R: q1}
     q2:
-      I    : {write: ' ', N: q1}
+      I    : {write: ' ', N: q2}
 
 positions:
   q0: {x: 200, y: 250}
